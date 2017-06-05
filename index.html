@@ -72,9 +72,9 @@
             margin-top:0.08rem ;
             margin-left: 0.08rem;
             width:1rem;
-            height:1rem;
+            height:1.2rem;
             background-image: url(images/1.jpg);
-            background-size: 1rem 1rem;
+            background-size: 1rem 1.2rem;
             border-radius: 10px;
             opacity: 0.5;
             filter:alpha(opacity=50)
@@ -83,9 +83,9 @@
             margin-top:0.08rem ;
             margin-left: 0.08rem;
             width:1rem;
-            height:1rem;
+            height:1.2rem;
             background-image: url(images/2.jpg);
-            background-size: 1rem 1rem;
+            background-size: 1rem 1.2rem;
             border-radius: 10px;
             opacity: 0.5;
             filter:alpha(opacity=50);
@@ -97,16 +97,16 @@
         }
         .imgbox{
             position:relative;
-            top:-3.07rem;
+            top:-3.48rem;
             left:1.18rem;
-            width:3.54rem;
-            height: 3.09rem;
+            width:4.17rem;
+            height: 3.45rem;
             border:2px solid red;
         }
         .box{
             position:absolute;
             background-image:url(images/1.jpg);
-            background-size: 3.54rem 3.09rem;
+            background-size: 4.17rem 3.45rem;
             transition: all .5s;
             font-size:20px;
         }
@@ -125,8 +125,8 @@
         }
         .cover{
             position: absolute;
-            width:3.54rem;
-            height:3.09rem;
+            width:4.17rem;
+            height:3.45rem;
             background: pink;
             opacity: 0.2;
             filter:alpha(opacity=20)
@@ -241,10 +241,10 @@
                 ele.className="box";
                 ele.index=i;
                 with(ele.style){
-                    width=1.18+"rem";
-                    height=1.03+"rem";
-                    var t=Math.floor(i/3)*1.03;
-                    var l=(i%3)*1.18;
+                    width=1.39+"rem";
+                    height=1.15+"rem";
+                    var t=Math.floor(i/3)*1.15;
+                    var l=(i%3)*1.39;
                     top=t+"rem";
                     left=l+"rem";
                     backgroundPosition=-l+"rem -"+t+"rem";
@@ -351,7 +351,7 @@
             for (var i = 0; i < boxs.length; i++) {
                 str += boxs[i].index;
             }
-            return str == "01234567891011";
+            return str == "012345678";
         }
         var swtichBoxs=function(oriEle,targetEle){
             var _top = oriEle.oriTop;
@@ -376,7 +376,7 @@
             for (var i = 0; i < boxs.length; i++) {
                 if(obj!=boxs[i]){
                     var t1 = x>  boxs[i].offsetLeft/100 && x< (boxs[i].offsetLeft/100+1.18);
-                    var t2 = Math.abs(y)>2.06-boxs[i].offsetTop /100 && Math.abs(y)< (3.09-boxs[i].offsetTop /100);
+                    var t2 = Math.abs(y)>2.3-boxs[i].offsetTop /100 && Math.abs(y)< (3.45-boxs[i].offsetTop /100);
                     if(t1&&t2 ){
                         return boxs[i];
                     }
