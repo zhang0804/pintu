@@ -43,47 +43,49 @@
             padding: 0;
         }
         .Name{
-            margin-left:0.2rem;
-            font-size:0.3rem;
+            margin-left:0.1rem;
+            font-size:0.25rem;
         }
 
         input:nth-child(1){
-            margin-top: 0.05rem;
-            margin-left:0.2rem;
-            width:1.2rem;
-            height:0.3rem;
-            font-size: 0.18rem;
+            margin-top: 0.03rem;
+            margin-left:0.1rem;
+            width:1.0rem;
+            height:0.25rem;
+            line-height: 0.25rem;
+            font-size: 0.17rem;
             display:block;
             border-radius: 8px;
 
         }
         input:nth-child(2){
-            margin-left:0.2rem;
-            margin-top: 0.1rem;
-            width:1.2rem;
-            height:0.3rem;
-            font-size: 0.18rem;
+            margin-left:0.1rem;
+            margin-top: 0.05rem;
+            width:1.0rem;
+            height:0.25rem;
+            line-height: 0.25rem;
+            font-size: 0.17rem;
             display:block;
             border-radius: 8px;
         }
         .tab:nth-child(1){
-            margin-top:0.1rem ;
-            margin-left: 0.13rem;
-            width:1.3rem;
-            height:1.3rem;
+            margin-top:0.08rem ;
+            margin-left: 0.08rem;
+            width:1rem;
+            height:1rem;
             background-image: url(images/1.jpg);
-            background-size: 1.3rem 1.3rem;
+            background-size: 1rem 1rem;
             border-radius: 10px;
             opacity: 0.5;
             filter:alpha(opacity=50)
         }
         .tab:nth-child(2){
-            margin-top:0.1rem ;
-            margin-left: 0.13rem;
-            width:1.3rem;
-            height:1.3rem;
+            margin-top:0.08rem ;
+            margin-left: 0.08rem;
+            width:1rem;
+            height:1rem;
             background-image: url(images/2.jpg);
-            background-size: 1.3rem 1.3rem;
+            background-size: 1rem 1rem;
             border-radius: 10px;
             opacity: 0.5;
             filter:alpha(opacity=50);
@@ -95,39 +97,39 @@
         }
         .imgbox{
             position:relative;
-            top:-3.89rem;
-            left:1.6rem;
-            width:5.6rem;
-            height: 3.9rem;
+            top:-3.07rem;
+            left:1.18rem;
+            width:3.54rem;
+            height: 3.09rem;
             border:2px solid red;
         }
         .box{
             position:absolute;
             background-image:url(images/1.jpg);
-            background-size: 5.6rem 3.9rem;
+            background-size: 3.54rem 3.09rem;
             transition: all .5s;
             font-size:20px;
         }
         .info{
             position:absolute;
-            margin-top: 1.2rem;
-            margin-left: 0.8rem;
+            margin-top: 1.1rem;
+            margin-left: 0.3rem;
             border-radius:30px;
             color:#333;
-            font-size:0.3rem;
+            font-size:0.24rem;
             text-align:center;
-            width: 4rem;
-            line-height:1rem;
-            height: 1rem;
+            width: 3rem;
+            line-height:0.8rem;
+            height: 0.8rem;
             background-color:pink;
         }
         .cover{
             position: absolute;
-            width:5.6rem;
-            height:3.9rem;
+            width:3.54rem;
+            height:3.09rem;
             background: pink;
-            opacity: 0;
-            filter:alpha(opacity=0)
+            opacity: 0.2;
+            filter:alpha(opacity=20)
 
         }
 
@@ -195,14 +197,14 @@
     }, false);
 </script>
 <script>
-    var winW = document.documentElement.clientWidth;
-    var design=414;
+    var winH= document.documentElement.clientHeight;
+    var design=480;
     var fontSize=100;
     var rem=design/fontSize;
-    if(winW>design){
-        winW=design;
+    if(winH>design){
+        winH=design;
     }
-    document.documentElement.style.fontSize =winW/rem+"px";
+    document.documentElement.style.fontSize =winH/rem+"px";
 
 </script>
 <script type="text/javascript">
@@ -233,16 +235,16 @@
 
 //        绑定默认数据
         var initDate=function(){
-            for(var i=0;i<12;i++){
+            for(var i=0;i<9;i++){
                 var ele=document.createElement("div");
                 $(ele).html(i);
                 ele.className="box";
                 ele.index=i;
                 with(ele.style){
-                    width=1.4+"rem";
-                    height=1.3+"rem";
-                    var t=Math.floor(i/4)*1.3;
-                    var l=(i%4)*1.4;
+                    width=1.18+"rem";
+                    height=1.03+"rem";
+                    var t=Math.floor(i/3)*1.03;
+                    var l=(i%3)*1.18;
                     top=t+"rem";
                     left=l+"rem";
                     backgroundPosition=-l+"rem -"+t+"rem";
@@ -256,9 +258,9 @@
         document.getElementById("start").addEventListener("click",function(){
              remove();
             del();
-            for(var i = 1;i<12;i++){
-                var a = Math.floor(Math.random()*1000) % 12;
-                var b = Math.floor(Math.random()*1000) % 12;
+            for(var i = 1;i<9;i++){
+                var a = Math.floor(Math.random()*1000) % 9;
+                var b = Math.floor(Math.random()*1000) % 9;
 
                 if(a != b){
                     var _left = boxs[a].style.left;
@@ -288,7 +290,7 @@
                         if( isOk() ){
                             mask.innerHTML="恭喜你,拼图成功！"
                         }else{
-                            mask.innerHTML="失败，请重新开始！"
+                            mask.innerHTML="拼图失败，请重新开始！"
                         }
                         imgBox.appendChild(mask);
                     }
@@ -373,8 +375,8 @@
             //自己不参与检查
             for (var i = 0; i < boxs.length; i++) {
                 if(obj!=boxs[i]){
-                    var t1 = x>  boxs[i].offsetLeft/100 && x< (boxs[i].offsetLeft/100+1.4);
-                    var t2 = Math.abs(y)>2.6-boxs[i].offsetTop /100 && Math.abs(y)< (3.9-boxs[i].offsetTop /100);
+                    var t1 = x>  boxs[i].offsetLeft/100 && x< (boxs[i].offsetLeft/100+1.18);
+                    var t2 = Math.abs(y)>2.06-boxs[i].offsetTop /100 && Math.abs(y)< (3.09-boxs[i].offsetTop /100);
                     if(t1&&t2 ){
                         return boxs[i];
                     }
